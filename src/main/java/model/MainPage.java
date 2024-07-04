@@ -10,6 +10,7 @@ public class MainPage extends DriverEntity {
     private final By sectionApplications = By.xpath("//div[text()='Валютные операции']");
     private final By sectionUpApplications = By.xpath("//div[text()='Валютные документы']");
     private final By sectionPaydoccurr = By.xpath("//div[text()='Поручения на перевод валюты']");
+    private final By buttonTableSetup = By.xpath("//button[@class='css-uqtvzs']");
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -32,6 +33,12 @@ public class MainPage extends DriverEntity {
         driver.findElement(sectionApplications).click();
         driver.findElement(sectionUpApplications).click();
         driver.findElement(sectionPaydoccurr).click();
+        return this;
+    }
+
+    @Step("go to table setup")
+    public MainPage goToTableSetupSection() {
+        driver.findElement(buttonTableSetup).click();
         return this;
     }
 }
