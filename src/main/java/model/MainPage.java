@@ -26,7 +26,7 @@ public class MainPage extends DriverEntity {
         return this;
     }
 
-    @Step
+    @Step("go to paydoccurr section")
     public MainPage goToPaydoccurrSection() {
         waitForElement(sectionApplications);
         driver.findElement(sectionApplications).click();

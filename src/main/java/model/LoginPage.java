@@ -1,6 +1,7 @@
 package model;
 
 import entity.DriverEntity;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -15,6 +16,7 @@ public class LoginPage extends DriverEntity {
         super(driver);
     }
 
+    @Step("log in")
     public void login(String login, String password) {
         driver.findElement(inputLogin).sendKeys(login);
         driver.findElement(inputPassword).sendKeys(password);
