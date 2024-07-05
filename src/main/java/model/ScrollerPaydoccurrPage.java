@@ -13,8 +13,14 @@ public class ScrollerPaydoccurrPage extends DriverEntity {
     public ScrollerPaydoccurrPage(WebDriver driver) {
         super(driver);
     }
+
     @Step("wait for title")
     public boolean titlePaydoccurrVisible() {
+        return driver.findElement(title).isDisplayed();
+    }
+
+    @Step("wait for table setup")
+    public boolean titleTableSetupVisible() {
         return driver.findElement(titleTableSetup).isDisplayed();
     }
 }

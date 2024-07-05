@@ -12,11 +12,12 @@ public class ScrollerTest extends Base {
         assertTrue("Wait for title onb is displayed", scrollerPaydoccurrPage.titlePaydoccurrVisible());
     }
 
+
     @Test
     @DisplayName("check table setup")
     public void checkTableSetupTest() {
         mainPage.goToPaydoccurrSection();
         mainPage.goToTableSetupSection();
-        assertTrue("Wait for title table setup is displayed", scrollerPaydoccurrPage.titlePaydoccurrVisible());
+        assertTrue("Wait for title table setup is displayed", scrollerPaydoccurrPage.titleTableSetupVisible());
     }
 }

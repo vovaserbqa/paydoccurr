@@ -9,8 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-import static entity.Entity.LOGIN;
-import static entity.Entity.PASSWORD;
+import static entity.Entity.*;
 import static org.junit.Assert.assertTrue;
 
 public class Base {
@@ -24,7 +23,7 @@ public class Base {
     public void setDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SerVV\\Desktop\\paydoccurr\\src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", CHROMEDRIVERPATH);
 
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
@@ -33,7 +32,7 @@ public class Base {
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://client-login.stage.gboteam.ru/");
+        driver.get(URL);
         loginPage.login(LOGIN, PASSWORD);
         assertTrue("Wait for title main is displayed", mainPage.titleMainVisible());
     }
